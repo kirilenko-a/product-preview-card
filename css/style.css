@@ -12,11 +12,11 @@ body {
   background-color: #F2EAE2;
 }
 
-.container {
+.product-card {
   padding: 80px 12px;
 }
 @media (min-width: 768px) {
-  .container {
+  .product-card {
     margin: 0 auto;
   }
 }
