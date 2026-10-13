@@ -1,15 +1,51 @@
 @use 'reset';
 @use 'variables';
+@use 'mixins';
 
 body {
+  padding: 80px 12px;
+  height: 100vh;
   background-color: variables.$color-cream;
+
+  @media (min-width: 768px) {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 84px;
+  }
+
+  @media (min-width: 1440px) {
+    padding: 0 420px;
+  }
 }
 
 .product-card {
-  padding: 80px 12px;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  background-color: variables.$color-white;
+
+  &__info {
+    padding: 32px;
+  }
+
+  &__name {
+    color: variables.$color-grey;
+    @include mixins.preset-4;
+  }
+
+  &__title {
+    color: variables.$color-black;
+    @include mixins.preset-1;
+  }
+
+  &__description {
+    color: variables.$color-grey;
+    @include mixins.preset-3;
+  }
 
   @media (min-width: 768px) {
-    margin: 0 auto;
+    flex-direction: row;
   }
 }
 
@@ -18,6 +54,8 @@ body {
   display: block;
 
   img {
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
     width: 100%;
     height: 100%;
     object-fit: cover;
